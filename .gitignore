@@ -14,3 +14,7 @@ app/build/
 *.jks
 keystore.properties
 app/src/main/jni/
+accounts/
+accounts.json
+*.zip
+.firefox-vpn-tokens.json
