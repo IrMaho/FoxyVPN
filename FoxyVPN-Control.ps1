@@ -235,7 +235,7 @@ function Test-AllPings {
             try {
                 $tcp = New-Object System.Net.Sockets.TcpClient
                 $c = $tcp.BeginConnect($item.Host, 2499, $null, $null)
-                if ($c.AsyncWaitHandle.WaitOne(1500, $false) -and $tcp.Connected) {
+                if ($c.AsyncWaitHandle.WaitOne(2500, $false) -and $tcp.Connected) {
                     $sw.Stop()
                     $lat = $sw.ElapsedMilliseconds
                     $tcp.EndConnect($c)
@@ -321,11 +321,11 @@ function Show-AccountManager {
         Write-Host "  >> Total Bandwidth Pool: $totGB GB across $accCount account(s)" -ForegroundColor Yellow
         Write-Host '  ==============================================================================' -ForegroundColor DarkCyan
         Write-Host '  [1] Switch Active Account        (Ã˜Â§Ã™â€ Ã˜ÂªÃ˜Â®Ã˜Â§Ã˜Â¨ Ã™Ë† Ã™ÂÃ˜Â¹Ã˜Â§Ã™â€žÃ¢â‚¬Å’Ã˜Â³Ã˜Â§Ã˜Â²Ã›Å’ Ã˜Â§ÃšÂ©Ã˜Â§Ã™â€ Ã˜Âª Ã˜Â¯Ã›Å’ÃšÂ¯Ã˜Â±)' -ForegroundColor White
-        Write-Host '  [2] Login New Account            (Ã™Ë†Ã˜Â±Ã™Ë†Ã˜Â¯ Ã˜Â¨Ã™â€¡ Ã˜Â§ÃšÂ©Ã˜Â§Ã™â€ Ã˜Âª Ã˜Â³Ã˜Â§Ã˜Â®Ã˜ÂªÃ™â€¡ Ã˜Â´Ã˜Â¯Ã™â€¡ Ã™Ë† Ã˜Â«Ã˜Â¨Ã˜Âª Ã˜Â¯Ã˜Â± Ã˜Â¨Ã˜Â±Ã™â€ Ã˜Â§Ã™â€¦Ã™â€¡)' -ForegroundColor White
+        Write-Host '  [2] Login New Account            (ورود به اکانت و ثبت در برنامه)' -ForegroundColor White
         Write-Host '  [3] Register New Account         (Ã˜Â§Ã›Å’Ã˜Â¬Ã˜Â§Ã˜Â¯ Ã˜Â§ÃšÂ©Ã˜Â§Ã™â€ Ã˜Âª Ã˜Â¬Ã˜Â¯Ã›Å’Ã˜Â¯ - Ã˜Â¨Ã˜Â§Ã˜Â² ÃšÂ©Ã˜Â±Ã˜Â¯Ã™â€  Ã˜ÂµÃ™ÂÃ˜Â­Ã™â€¡ Ã˜Â«Ã˜Â¨Ã˜Âª Ã™â€ Ã˜Â§Ã™â€¦)' -ForegroundColor White
-        Write-Host '  [4] Refresh Quotas and Info      (Ã˜Â¨Ã˜Â±Ã™Ë†Ã˜Â²Ã˜Â±Ã˜Â³Ã˜Â§Ã™â€ Ã›Å’ Ã˜Â²Ã™â€ Ã˜Â¯Ã™â€¡ Ã™Ë†Ã˜Â¶Ã˜Â¹Ã›Å’Ã˜Âª Ã˜Â­Ã˜Â¬Ã™â€¦ Ã™Ë† Ã˜Â±Ã™Ë†Ã˜Â²Ã™â€¡Ã˜Â§)' -ForegroundColor White
+        Write-Host '  [4] Refresh Quotas and Info      (بروزرسانی وضعیت حجم و روزها)' -ForegroundColor White
         Write-Host '  [5] Delete Account               (Ã˜Â­Ã˜Â°Ã™Â Ã›Å’ÃšÂ© Ã˜Â§ÃšÂ©Ã˜Â§Ã™â€ Ã˜Âª Ã˜Â§Ã˜Â² Ã™â€žÃ›Å’Ã˜Â³Ã˜Âª)' -ForegroundColor White
-        Write-Host '  [0] Back to Main Menu            (Ã˜Â¨Ã˜Â§Ã˜Â²ÃšÂ¯Ã˜Â´Ã˜Âª Ã˜Â¨Ã™â€¡ Ã™â€¦Ã™â€ Ã™Ë†Ã›Å’ Ã˜Â§Ã˜ÂµÃ™â€žÃ›Å’)' -ForegroundColor White
+        Write-Host '  [0] Back to Main Menu            (بازگشت به منوی اصلی)' -ForegroundColor White
         Write-Host '  ==============================================================================' -ForegroundColor DarkCyan
         
         $action = Read-Host "`n  Select option [1, 2, 3, 4, 5, 0]"
